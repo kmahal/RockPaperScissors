@@ -31,7 +31,7 @@
 
 @implementation ViewController
 
--(void)showWinner
+-(void)showWinner : (NSString *) player_tap
 {
     BOOL computerWon;
     
@@ -41,7 +41,7 @@
     
     [compValue roShamBo];
     
-    computerWon = [value didComputerWin:compValue player:@"rock"];
+    computerWon = [value didComputerWin:compValue player:player_tap];
     
    computerHandLabel.text = [compValue compHand];
     
@@ -102,19 +102,19 @@
 - (IBAction)rock:(id)sender
 {
     playerHandLabel.text = @"rock";
-    [self showWinner];
+    [self showWinner:@"rock"];
 }
 
 - (IBAction)paper:(id)sender
 {
     playerHandLabel.text = @"paper";
-    [self showWinner];
+    [self showWinner:@"paper"];
 }
 
 - (IBAction)scissors:(id)sender
 {
     playerHandLabel.text = @"scissors";
-    [self showWinner];
+    [self showWinner:@"scissors"];
 }
 
 
